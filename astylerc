@@ -1,0 +1,11 @@
+# One True Brace Style
+style-otbs
+
+# Windows and CR can go die
+lineend=linux
+
+# I'm a tab person.
+indent=tab
+
+# Pointers are part of the name
+align-pointer=name
