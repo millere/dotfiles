@@ -1,1 +1,2 @@
+# I use grml's zsh configs. This is included by them
 EDITOR=vim
