@@ -10,6 +10,9 @@ for file in $files; do
 	ln -s $dir/$file ~/.$file
 done
 
+wgit=`which git`
+wvim=`which vim`
+
 if [ -z $wvim ]; then
 	echo "Vim not found in PATH; not boostrapping vundle"
 	exit 0
@@ -26,3 +29,5 @@ mkdir -p $HOME/.vim/bundle/vundle
 cd $HOME/.vim/bundle
 git clone https://github.com/gmarik/vundle.git
 cd -
+
+vim +BundleInstall +qall
