@@ -1,0 +1,9 @@
+unmap j
+unmap k
+unmap l
+unmap h
+
+map k scroll down
+map h scroll up
+map j scroll left
+map l scroll right
