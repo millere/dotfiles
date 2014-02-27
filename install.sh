@@ -10,6 +10,10 @@ for file in $files; do
 	ln -s $dir/$file ~/.$file
 done
 
+if [ -d $HOME/.vim/bundle/vundle ]; then
+	exit 0
+fi
+
 wgit=`which git`
 wvim=`which vim`
 
