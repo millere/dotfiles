@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dir=`pwd`
-files="astylerc vimrc vim gitconfig xinitrc Xresources"
+files="astylerc cmus vimrc vim gitconfig xinitrc Xresources"
 
 echo $dir
 
