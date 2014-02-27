@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dir=`pwd`
-files="vimrc vim gitconfig"
+files="astylerc vimrc vim gitconfig"
 
 echo $dir
 
