@@ -18,12 +18,24 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+
 Bundle 'sjl/badwolf'
+try
+       colors badwolf
+catch
+endtry
+
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 
-"let g:airline_powerline_fonts = 1
-set ttimeoutlen=50
+Bundle 'scrooloose/syntastic'
+let g:syntastic_error_symbol = '*'
+let g:syntastic_warning_symbol = '!'
+let g:syntastic_mode_map = { 'mode': 'active',
+	\ 'active_filetypes': [],
+	\ 'passive_filetypes': ['html'] }
+
+set ttimeoutlen=50 "So airline doesn't delay to exit
 
 syntax enable "Syntax 
 filetype plugin indent on "Auto indentation.
@@ -36,20 +48,20 @@ set shiftwidth=8
 set softtabstop=8
 
 set encoding=utf-8
-set scrolloff=3
+set scrolloff=3 "Keep 3 lines visible above or below cursor
 set autoindent
+set autowrite "Writes on make/shell commands
 set showmode
 set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
 set cursorline
-set ttyfast
 set ruler
 set backspace=indent,eol,start
-set laststatus=2
+set laststatus=2 "always show status line
 set relativenumber
-set number
+set number "this + relanum are great
 set lazyredraw "only redraw when needed. Faster.
 let mapleader = ","
 
@@ -76,7 +88,6 @@ nnoremap <C-i> <C-w>k
 nnoremap <C-o> <C-w>l
 nnoremap <space> :
 
-colors badwolf
 
 " Helpful for forgetting to sudo a file
 command W w !sudo tee % > /dev/null
