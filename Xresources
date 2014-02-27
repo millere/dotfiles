@@ -1,0 +1,75 @@
+! #########################################
+urxvt*perl-lib:			/usr/lib/urxvt/perl
+urxvt*perl-ext-common:		default,matcher,clipboard 
+urxvt*perl-matcher: 		1
+urxvt*matcher-button: 		1
+urxvt*urlLauncher:		/usr/bin/firefox
+!URxvt*matcher.button: 1
+!URxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+urxvt*cursorUnderline: 1
+urxvt*letterspace: -5
+!urxvt*fading: 			10
+!urxvt*fadeColor: 		#000000	
+urxvt*cursorBlink:		true
+urxvt*scrollBar:		false
+urxvt*depth:			33 
+urxvt*internalBorder: 		10
+
+
+!urxvt*font: xft:gohufont:size=9
+!urxvt*boldFont: xft:gohufont:bold:size=9
+!urxvt*italicFont: xft:gohufont:italic:size=9
+urxvt*font : -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
+urxvt*boldFont : -gohu-gohufont-bold-r-normal--11-80-100-100-c-60-iso10646-1
+uzxvt*italicFont : -gohu-gohufont-bold-r-normal--11-80-100-100-c-60-iso10646-1
+
+Xft.dpi:	96
+Xft.rgba:	rgb
+Xft.antialias: 	1
+Xft.hinting: 	1
+Xft.autohint: 	0
+Xft.hintstyle: 	hintslight
+Xft.lcdfilter: 	lcddefault
+
+xclock*majorColor: #9a875f
+xclock*minorColor: #9a875f
+xclock*minuteColor: #9a875f
+xclock*hourColor: #9a875f
+xclock*secondColor: #9a875f
+
+*foreground: #D7D0C7
+*background: #151515
+
+!black
+! *color0:     #AF875F
+! *color8:     #AF875F
+*color0:     #101010
+*color8:     #404040
+!red
+*color1:     #E84F4F
+*color9:     #D23D3D
+!green
+*color2:     #B8D68C
+*color10:    #A0CF5D
+!yellow
+*color3:     #E1AA5D
+*color11:    #F39D21
+!blue
+*color4:     #6095C5
+*color12:    #98CBFE
+!magenta
+*color5:     #9B64FB
+*color13:    #8542FF
+!cyan
+*color6:     #6D878D
+*color14:    #42717B
+!white
+*color7:     #dddddd
+*color15:    #dddddd
+
+URxvt*borderColor:        #151515
+URxvt*colorBD:            #ffffff
+URxvt*cursorColor:        #ff8939
+URxvt*cursorColor2:       #151515
+
+*urxvt.url-select.launcher:	uzbl-tabbed

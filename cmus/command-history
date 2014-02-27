@@ -1,0 +1,18 @@
+colorscheme zenburn
+colorscheme cyan
+colorscheme green-mono-88
+colorscheme green
+bind -f common h win-up
+bind -f common k win-down
+q
+set color_win_attr=default
+set color_win_cur_sel_fg=red
+set color_win_cur=red
+set color_titleline_bg=blue
+set color_titleline_bg=red
+set color_titleline_attr=1
+set color_titleline_attr=red
+set color_titleline_attr 1
+set color_titleline_attr red
+save
+1
