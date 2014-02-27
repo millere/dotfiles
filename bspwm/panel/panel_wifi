@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Explanation:
+# iwgetid gets the name of the network currently connected.
+# if not connected, returns "".
+#
+# While disconnected, poll every .25 seconds.
+# While connected, poll once a second.
+#
+# echo "N..." - is for the bar script parsing. If there's an N as
+# the first letter, the bar script knows that it's looking at
+# network info.
+
+while true; do
+	SSID=`iwgetid -r`
+
+	if [[ $SSID == "" ]]; then
+		echo "NDisconnected"
+		sleep .25
+	else
+		echo "N$SSID"
+		sleep 1
+	fi
+done
