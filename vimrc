@@ -21,23 +21,33 @@ Bundle 'gmarik/vundle'
 
 Bundle 'sjl/badwolf'
 try
-       colors badwolf
+	colors badwolf
 catch
 endtry
 
 Bundle 'bling/vim-airline'
+"let g:airline_powerline_fonts = 1
 Bundle 'tpope/vim-fugitive'
+Bundle 'ervandew/supertab'
+Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+" help vim-latex use grep better
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+let Tex_FoldedSections=""
+let Tex_FoldedEnvironments=""
+let Tex_FoldedMisc=""
+let Tex_DefaultTargetFormat="pdf"
 
 Bundle 'scrooloose/syntastic'
 let g:syntastic_error_symbol = '*'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_mode_map = { 'mode': 'active',
-	\ 'active_filetypes': [],
-	\ 'passive_filetypes': ['html'] }
+			\ 'active_filetypes': [],
+			\ 'passive_filetypes': ['html'] }
 
 set ttimeoutlen=50 "So airline doesn't delay to exit
 
-syntax enable "Syntax 
+syntax enable "Syntax
 filetype plugin indent on "Auto indentation.
 
 set modelines=0 "prevent security hole
