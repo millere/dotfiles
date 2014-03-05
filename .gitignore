@@ -1,3 +1,4 @@
+bspwm/bspwm.log
 chromium/
 Cockatrice/
 cmus/cmus
@@ -6,4 +7,6 @@ darktable/
 dconf/
 htop/
 pulse/
+Trolltech.conf
 vim/vim
+WS6Z/
