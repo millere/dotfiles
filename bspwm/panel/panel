@@ -1,4 +1,5 @@
 #! /bin/sh
+PA=$HOME/.config/bspwm/panel
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
     printf "%s\n" "The panel is already running." >&2
@@ -16,14 +17,14 @@ bspc config top_padding 18
 
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
-panel_volume > "$PANEL_FIFO" &
-panel_battery > "$PANEL_FIFO" &
-panel_wifi > "$PANEL_FIFO" &
+$PA/panel_volume > "$PANEL_FIFO" &
+$PA/panel_battery > "$PANEL_FIFO" &
+$PA/panel_wifi > "$PANEL_FIFO" &
 clock -sf 'S%a %F %H:%M' > "$PANEL_FIFO" &
 
 case "$flavor" in
     bar)
-        cat "$PANEL_FIFO" | panel_bar | bar &
+        cat "$PANEL_FIFO" | $PA/panel_bar | bar &
         ;;
     dzen2)
         . panel_colors

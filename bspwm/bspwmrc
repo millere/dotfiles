@@ -10,6 +10,8 @@ REMAINING_DESKS_MAIN="ii iii iv v vi vii viii ix x"
 FIRST_DESK_SECONDARY=I
 REMAINING_DESKS_SECONDARY="II III IV V VI VII VIII IX X"
 
+PA=$HOME/.config/bspwm
+
 MONITORS_ASSOCIATED=`bspc query -M | wc -l` 
 if [[ -z `xrandr | grep " connected" | grep 'VGA'` ]]; then
 	#No monitor connected
@@ -43,15 +45,15 @@ bspc config presel_border_color "#9a875f"
 bspc config urgent_border_color "#504339"
 bspc config normal_frame_opacity 0.0
 bspc config focused_frame_opacity 0.05
-bspc config rule_command "$(which rule_command)"
+bspc config rule_command "$HOME/.config/bspwm/rule_command"
 
 
 # Rules
-rulc -a 'class=="BSPWM_FRAME"' 'frame=on'
-rulc -a 'class=="Skype"' 'floating=on'
-rulc -a 'class=="Transmission"' 'floating=on'
-rulc -a 'class=="Conky"' 'sticky=on,manage=off,lower=on'
-rulc -a 'class=="astime"' 'sticky=on'
-rulc -a 'class=="feh"' 'floating=on,manage=off'
+$PA/rulc -a 'class=="BSPWM_FRAME"' 'frame=on'
+$PA/rulc -a 'class=="Skype"' 'floating=on'
+$PA/rulc -a 'class=="Transmission"' 'floating=on'
+$PA/rulc -a 'class=="Conky"' 'sticky=on,manage=off,lower=on'
+$PA/rulc -a 'class=="astime"' 'sticky=on'
+$PA/rulc -a 'class=="feh"' 'floating=on,manage=off'
 
 /home/exm/.config/bspwm/panel/panel &
