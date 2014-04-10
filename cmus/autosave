@@ -1,4 +1,4 @@
-set aaa_mode=all
+set aaa_mode=album
 set altformat_current= %F 
 set altformat_playlist= %f%= %d 
 set altformat_title=%f
@@ -43,6 +43,10 @@ set continue=true
 set device=/dev/cdrom
 set display_artist_sort_name=false
 set dsp.alsa.device=default
+set dsp.ao.buffer_size=16384
+set dsp.ao.driver=
+set dsp.ao.wav_counter=1
+set dsp.ao.wav_dir=/home/exm
 set dsp.oss.device=
 set format_current= %a - %l -%3n. %t%= %y 
 set format_playlist= %-25%a %3n. %t%= %y %d 
@@ -52,7 +56,6 @@ set format_trackwin=%3n. %t%= %y %d
 set format_trackwin_va=%3n. %t (%a)%= %y %d 
 set icecast_default_charset=ISO-8859-1
 set id3_default_charset=ISO-8859-1
-set input.cdio.cddb_url=freedb.freedb.org:8880
 set lib_sort=albumartist date album discnumber tracknumber title filename
 set mixer.alsa.channel=PCM
 set mixer.alsa.device=default
@@ -64,7 +67,7 @@ set passwd=
 set pl_sort=
 set play_library=true
 set play_sorted=false
-set repeat=false
+set repeat=true
 set repeat_current=false
 set replaygain=disabled
 set replaygain_limit=true

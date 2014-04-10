@@ -1,5 +1,5 @@
 # One True Brace Style
-style-otbs
+style=otbs
 
 # Windows and CR can go die
 lineend=linux

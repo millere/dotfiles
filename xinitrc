@@ -4,7 +4,7 @@ xset fp rehash
 syndaemon -t -k -i 2 -d &
 sh ~/.fehbg &
 xsetroot -cursor_name left_ptr &
-unclutter -grab -noevents -root &
+unclutter -noevents -root &
 compton &
 sxhkd &
 redshift &
