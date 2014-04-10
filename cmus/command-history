@@ -1,10 +1,13 @@
+clear
+q
 colorscheme zenburn
+refresh 
+colorscheme default
 colorscheme cyan
 colorscheme green-mono-88
 colorscheme green
 bind -f common h win-up
 bind -f common k win-down
-q
 set color_win_attr=default
 set color_win_cur_sel_fg=red
 set color_win_cur=red

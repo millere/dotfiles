@@ -1,3 +1,5 @@
 # I use grml's zsh configs. This is included by them
 export EDITOR=vim
 export GOPATH=$HOME/dev
+
+weather(){ curl -s "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${@:-13699}"|perl -ne '/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"';}

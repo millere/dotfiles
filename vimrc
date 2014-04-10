@@ -28,8 +28,15 @@ endtry
 Bundle 'bling/vim-airline'
 "let g:airline_powerline_fonts = 1
 Bundle 'tpope/vim-fugitive'
-Bundle 'ervandew/supertab'
-Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'fatih/vim-go'
+Bundle 'vimoutliner/vimoutliner'
+
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-notes'
+let g:notes_directories = ['~/notes']
+"let g:notes_smart_quotes = 0
+"Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 " help vim-latex use grep better
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
@@ -44,6 +51,7 @@ let g:syntastic_warning_symbol = '!'
 let g:syntastic_mode_map = { 'mode': 'active',
 			\ 'active_filetypes': [],
 			\ 'passive_filetypes': ['html'] }
+
 
 set ttimeoutlen=50 "So airline doesn't delay to exit
 
