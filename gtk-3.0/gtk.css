@@ -2,3 +2,4 @@
 	-GtkRange-slider-width: 0;
 	-GtkRange-trough-border: 0;
 }
+.window-frame {box-shadow: none; margin: 0}
