@@ -1,50 +1,29 @@
-" Set keyboard mappings for Colemak movement
+nnoremap j gj
+nnoremap k gk
+let mapleader = "\<Space>"
 
-noremap K J
-noremap J K
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-noremap h gk
-noremap j h
-noremap k gj
+" Manage plugins nicely :)
+Plugin 'gmarik/Vundle.vim'
 
-" Disable arrow keys in normal mode. Train myself!
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <right> <nop>
-noremap <left> <nop>
+" My color scheme
+Plugin 'sjl/badwolf'
 
-"plugin loading with Vundle
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+" Provides the best go support for vim, period.
+Plugin 'fatih/vim-go'
+" Use goimports as go fmt - fixes imports on save
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
 
-Bundle 'gmarik/vundle'
+" Better status bar, make it useful and pretty
+Plugin 'bling/vim-airline'
 
-Bundle 'sjl/badwolf'
-try
-	colors badwolf
-catch
-endtry
-
-Bundle 'bling/vim-airline'
-"let g:airline_powerline_fonts = 1
-Bundle 'tpope/vim-fugitive'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'fatih/vim-go'
-Bundle 'vimoutliner/vimoutliner'
-
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-notes'
-let g:notes_directories = ['~/notes']
-"let g:notes_smart_quotes = 0
-"Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
-" help vim-latex use grep better
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
-let Tex_FoldedSections=""
-let Tex_FoldedEnvironments=""
-let Tex_FoldedMisc=""
-let Tex_DefaultTargetFormat="pdf"
-
+" Error checking on save
 Bundle 'scrooloose/syntastic'
 let g:syntastic_error_symbol = '*'
 let g:syntastic_warning_symbol = '!'
@@ -52,68 +31,58 @@ let g:syntastic_mode_map = { 'mode': 'active',
 			\ 'active_filetypes': [],
 			\ 'passive_filetypes': ['html'] }
 
+" syntax highlighting for rust, markdown, and qml
+Bundle 'wting/rust.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'peterhoeg/vim-qml'
+Plugin 'vim-scripts/Smart-Tabs'
 
-set ttimeoutlen=50 "So airline doesn't delay to exit
+Plugin 'kovisoft/slimv'
 
-syntax enable "Syntax
-filetype plugin indent on "Auto indentation.
+Plugin 'vim-scripts/SyntaxRange'
 
-set modelines=0 "prevent security hole
+call vundle#end()
+filetype plugin indent on
 
-"Tab stop is 8. Use the tab character
-set tabstop=8
-set shiftwidth=8
-set softtabstop=8
+" Mappings
+let mapleader = "\<Space>" "Use space as leader
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gr <Plug>(go-rename)
 
-set encoding=utf-8
+set ttimeoutlen=50 "So airline doesn't delay exit modes
+syntax enable "syntax highlighting is a good thing
+set modelines=0 "Modelines have a security thing
+
+set encoding=utf-8 "Everything should be utf-8 at this point
 set scrolloff=3 "Keep 3 lines visible above or below cursor
-set autoindent
+set autoindent "Yeah, I like my editor to do things for me
 set autowrite "Writes on make/shell commands
 set showmode
-set showcmd
-set hidden
+set showcmd "Show characters typed in normal until command is complete
+set hidden "Don't abandon buffers!
 set wildmenu
 set wildmode=list:longest
 set cursorline
 set ruler
 set backspace=indent,eol,start
 set laststatus=2 "always show status line
-set relativenumber
-set number "this + relanum are great
+set number
 set lazyredraw "only redraw when needed. Faster.
-let mapleader = ","
+set mouse=a
+set t_Co=256
 
-nnoremap / /\v
-vnoremap / /\v
-set ignorecase
 set smartcase
-set gdefault
 set incsearch
-set showmatch
-set hlsearch
-nnoremap <leader><space> :noh<cr>
-nnoremap <leader>m :!make<cr>
-nnoremap <tab> %
-vnoremap <tab> %
 
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-
-"Window management
+"Split management
 nnoremap <leader>w <C-w>v<C-w>l
-nnoremap <C-n> <C-w>h
-nnoremap <C-e> <C-w>j
-nnoremap <C-i> <C-w>k
-nnoremap <C-o> <C-w>l
-nnoremap <space> :
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+set splitbelow
+set splitright
 
-
-" Helpful for forgetting to sudo a file
-command W w !sudo tee % > /dev/null
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " Turn off autocommenting
-
-" gvim
-set guioptions=
-set guifont=gohufont\ 9
-
-"clipboard
-set clipboard=unnamed
+colors badwolf
